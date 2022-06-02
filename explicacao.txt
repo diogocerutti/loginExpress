@@ -1,0 +1,22 @@
+Aplicação simples de login e senha em Node.js usando:
+
+Bibliotecas:
+
+bcryptjs - para criptografia de senha
+ejs - para rodar HTML dentro de arquivos JavaScript
+express - para manipulação de rotas
+passport - para autenticação de usuário
+
+Considerações:
+
+Essa aplicação foi feita em Node.js, portanto, para rodá-la deve-se 
+ter o Node.js instalado na máquina, bem como a biblioteca NPM ou YARN.
+
+Para instalar todas as dependências e bibliotecas do projeto, é preciso
+estar na raíz do arquivo e digitar "npm i".
+
+Para subir o servidor, é necessário estar na raíz do projeto e digitar "npm start".
+Em seguida, acessar a rota "localhost:3000" no navegador.
+
+Aluno: Diogo Cerutti 
+01/06/2022

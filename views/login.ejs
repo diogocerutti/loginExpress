@@ -1,19 +1,34 @@
+<!-- Formulário de Login -->
+
 <!doctype html>
 <html>
-  <body>
-    <h1>Login</h1>
-    <form action="/login" method="POST">
-      <input name="username" type="text" /><br />
-      <input name="password" type="password" /><br />
-      <input type="submit" value="Login" />
-    </form>
-    <% if(message) { %>
+  <style>
+    .wrap {
+      text-align: center
+    }
+
+    .login {
+      justify-content: left
+    }
+  </style>
+  <div class="wrap">
+    <div class="login">
+      <h1>Login</h1>
+      <form action="/login" method="POST">
+        <input name="username" type="text" /><br />
+        <input name="password" type="password" /><br />
+        <input type="submit" value="Login" />
+      </form>
+      <% if(message) { %>
+        <p>
+          <label style="color:Red"><%= message %></label>
+        </p>
+      <%}%>
       <p>
-        <label style="color:Red"><%= message %></label>
+        <a href="/users/forgot">Esqueceu sua senha?</a> | <a href="/users/signup">Não possui cadastro?</a>
       </p>
-    <%}%>
-    <p>
-      <a href="/users/forgot">Esqueceu sua senha?</a> | <a href="/users/signup">Não possui cadastro?</a>
-    </p>
-  </body>
+      <p> Copyright Diogo Cerutti todos os direitos reservados (2022) </p>
+      </body>
+    </div>
+  </div>
 </html>

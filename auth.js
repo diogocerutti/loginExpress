@@ -1,14 +1,23 @@
+/* CONFIDENCIALIDADE */
+
 const bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 
+/*  
+    Objeto contendo os usuários da aplicação.
+    Como não está sendo usado banco de dados, se caso for desejado criar 
+    um novo usuário, deve declarar ele dentro do array
+ */
 const users = [{ 
     _id: 1, 
     username: "adm", 
-    password: "$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW", //123
+    password: "$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW", // Senha: 123
     email: "diogo.cerutti@unochapeco.edu.br"
 }];
 
-module.exports = function(passport){ 
+module.exports = function(passport){
+
+    // Percorre os usuários existentes
 
     passport.serializeUser((user, done) => {
         done(null, user._id);
@@ -44,6 +53,8 @@ module.exports = function(passport){
             }
         }
     ));
+
+    // Busca um usuário específico (por NOME ou ID)
 
     function findUser(username){
         return users.find(user => user.username === username);
